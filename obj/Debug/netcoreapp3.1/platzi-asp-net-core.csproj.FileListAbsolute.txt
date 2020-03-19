@@ -33,3 +33,4 @@ C:\laragon\www\platzi-asp-net-core\obj\Debug\netcoreapp3.1\staticwebassets\platz
 C:\laragon\www\platzi-asp-net-core\obj\Debug\netcoreapp3.1\platzi-asp-net-core.dll
 C:\laragon\www\platzi-asp-net-core\obj\Debug\netcoreapp3.1\platzi-asp-net-core.pdb
 C:\laragon\www\platzi-asp-net-core\obj\Debug\netcoreapp3.1\platzi-asp-net-core.csproj.CopyComplete
+C:\laragon\www\platzi-asp-net-core\obj\Debug\netcoreapp3.1\Razor\Views\School\Index.cshtml.g.cs
