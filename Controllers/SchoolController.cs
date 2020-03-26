@@ -9,8 +9,7 @@ namespace platzi_asp_net_core.Controllers
         public IActionResult Index()
         {
             var school = new School();
-            school.FoundationYear = 2005;
-            school.SchoolId = Guid.NewGuid().ToString();
+            school.CreateYear = 2005;
             school.Name = "Platzi School";
 
             ViewBag.ThingDinamic = "The nun";

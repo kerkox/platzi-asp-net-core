@@ -4,7 +4,7 @@ using platzi_asp_net_core.Util;
 
 namespace platzi_asp_net_core.Models
 {
-  public class Course : ObjectSchoolBase, IPlace
+  public class Course : ObjectSchoolBase
   {
     public TimeType timeType {get; set;}
     public List<Subject> Subjects { get; set; }
