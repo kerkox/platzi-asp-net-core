@@ -9,7 +9,7 @@ namespace platzi_asp_net_core.Controllers
   {
     public IActionResult Index()
     {
-        return View();
+        return View(new Subject { Name = "Programacion" });
     }
     public IActionResult MultiSubject()
     {
