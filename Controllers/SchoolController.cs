@@ -11,6 +11,10 @@ namespace platzi_asp_net_core.Controllers
             var school = new School();
             school.CreateYear = 2005;
             school.Name = "Platzi School";
+            school.SchoolType = SchoolTypes.HighSchool;
+            school.City = "CALI";
+            school.Country = "COLOMBIA";
+            school.Address = "Av siempre viva";
 
             ViewBag.ThingDinamic = "The nun";
 
