@@ -8,11 +8,7 @@
 
 
 <strong>Desde la vista parcial</strong>
-@foreach (var subject in Model)
-{
-    <partial name="ObjectSimpleSubject" model="subject"/>
-    
-}
+<partial name="ListObjectSchool" model="Model"></partial>
 
 
 <i><i>@ViewBag.date</i></i>

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using platzi_asp_net_core.Models;
 
@@ -7,6 +8,7 @@ namespace platzi_asp_net_core.Controllers
 {
   public class SubjectController : Controller
   {
+    private SchoolContext _context;
     public IActionResult Index()
     {
         return View(new Subject { Name = "Programacion" });
@@ -18,15 +20,13 @@ namespace platzi_asp_net_core.Controllers
       ViewBag.ThingDinamic = "The nun";
       ViewBag.date = DateTime.Now;
 
-      var subjectList = new List<Subject>() {
-        new Subject {Name = "Matemáticas"},
-        new Subject {Name = "Educación Física"},
-        new Subject {Name = "Castellano"},
-        new Subject {Name = "Ciencias Naturales"},
-        new Subject {Name = "Programacion"}
-      };
+     var subjectList = _context.Subjects.ToArray();
 
       return View("MultiSubject",subjectList);
+    }
+    public SubjectController(SchoolContext context)
+    {
+      _context = context;
     }
   }
 }
