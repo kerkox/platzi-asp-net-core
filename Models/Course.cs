@@ -10,12 +10,9 @@ namespace platzi_asp_net_core.Models
     public List<Subject> Subjects { get; set; }
     public List<Student> Students { get; set; }
     public string Address { get; set; }
+    public string SchoolId {get; set; }
+    public School School {get; set;}
 
-    public void CleanPlace()
-    {
-      Printer.DrawLine();
-      Console.WriteLine("Cleaning establishment");
-      Console.WriteLine($"Course: {Name} clean");
-    }
+    
   }
 }
