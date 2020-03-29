@@ -12,11 +12,11 @@ namespace platzi_asp_net_core.Models
     public SchoolTypes SchoolType { get; set; }
     public List<Course> Courses { get; set; }
 
-    public School()
+    public School() : base()
     {
-        
+
     }
-    public School(string name, int year) => (Name, CreateYear) = (name, year);
+    public School(string name, int year): base() => (Name, CreateYear) = (name, year);
 
     public School(string name, int year, SchoolTypes schoolType, string country = "", string city = "") : base()
     {
