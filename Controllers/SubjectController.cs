@@ -13,6 +13,15 @@ namespace platzi_asp_net_core.Controllers
     {
         return View(_context.Subjects.FirstOrDefault());
     }
+
+    [Route("Subject/Index/{subjectId}")]
+    public IActionResult Index(string subjectId)
+    {
+      var subject = from subj in _context.Subjects
+                    where subj.Id == subjectId 
+                    select subj;
+      return View(subject.SingleOrDefault());
+    }
     public IActionResult MultiSubject()
     {
       ViewBag.ThingDinamic = "The nun";
