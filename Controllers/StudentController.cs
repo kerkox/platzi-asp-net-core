@@ -11,16 +11,13 @@ namespace platzi_asp_net_core.Controllers
     private SchoolContext _context;
     public IActionResult Index()
     {
-        return View(new Student { Name = "Jeniffer" });
+        return View(_context.Students.FirstOrDefault());
     }
     public IActionResult MultiStudent()
     {
-      var subject = new Subject();
-      subject.Name = "Programming";
       ViewBag.ThingDinamic = "The nun";
       ViewBag.date = DateTime.Now;
-      var studentsList = _context.Students.ToArray();
-      return View("MultiStudent", studentsList);
+      return View("MultiStudent", _context.Students);
     }
 
     public StudentController(SchoolContext context)
