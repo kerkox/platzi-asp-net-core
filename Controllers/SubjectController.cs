@@ -11,19 +11,19 @@ namespace platzi_asp_net_core.Controllers
     private SchoolContext _context;
     public IActionResult Index()
     {
-      return View(_context.Subjects.FirstOrDefault());
+      return View("MultiSubject", _context.Subjects);
     }
 
-    [Route("Subject/Index/{subjectId}")]
+    [Route("Subject/{subjectId}")]
     public IActionResult Index(string subjectId)
     {
       if (!string.IsNullOrWhiteSpace(subjectId))
       {
 
-        var subject = from subj in _context.Subjects
-                      where subj.Id == subjectId
-                      select subj;
-        return View(subject.SingleOrDefault());
+        var subjectFound = from subject in _context.Subjects
+                      where subject.Id == subjectId
+                      select subject;
+        return View(subjectFound.SingleOrDefault());
       }
       else
       {

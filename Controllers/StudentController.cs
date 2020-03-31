@@ -11,8 +11,26 @@ namespace platzi_asp_net_core.Controllers
     private SchoolContext _context;
     public IActionResult Index()
     {
-        return View(_context.Students.FirstOrDefault());
+      return View("MultiStudent", _context.Students);
     }
+
+    [Route("Student/{studentId}")]
+    public IActionResult Index(string studentId)
+    {
+      if (!string.IsNullOrWhiteSpace(studentId))
+      {
+
+        var studentFound = from student in _context.Students
+                      where student.Id == studentId
+                      select student;
+        return View(studentFound.SingleOrDefault());
+      }
+      else
+      {
+        return View("MultiStudent", _context.Students);
+      }
+    }
+
     public IActionResult MultiStudent()
     {
       ViewBag.ThingDinamic = "The nun";
