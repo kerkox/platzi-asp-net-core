@@ -37,6 +37,21 @@ namespace platzi_asp_net_core.Controllers
       return View("MultiCourse", _context.Courses);
     }
 
+    public IActionResult Create()
+    {
+      ViewBag.date = DateTime.Now;
+
+      return View();
+    }
+
+    [HttpPost]
+    public IActionResult Create(Course course)
+    {
+      ViewBag.date = DateTime.Now;
+
+      return View();
+    }
+
     public CourseController(SchoolContext context)
     {
         _context = context;
